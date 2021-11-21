@@ -10,7 +10,7 @@
 ### SERVER: 
 
 API route : 
-`https://competent-kare-f81fa2.netlify.app/api/insert`
+`https://emi-calulator-app.herokuapp.com/api/insert`
 
 ### Client
 Calculates EMI and amortization schedule
