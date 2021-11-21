@@ -1,0 +1,24 @@
+CREATE TABLE `emicalculator`.`loan_amount` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `loanAmount` DECIMAL(20) NULL,
+  `interest` DECIMAL(20) NULL,
+  `tenure` INT NULL,
+  `emi` DECIMAL(20) NULL,
+  `totalInterest` DECIMAL(20) NULL,
+  `totalPayment` DECIMAL(40) NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
+
+
+
+
+CREATE TABLE `emicalculator`.`amortization_schedule` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `customerId` JSON NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `idamortization_schedule_UNIQUE` (`id` ASC) VISIBLE);
+
+
+ALTER TABLE `emicalculator`.`amortization_schedule` 
+ADD COLUMN `amortData` JSON NULL AFTER `customerId`,
+CHANGE COLUMN `customerId` `customerId` INT NULL ;
