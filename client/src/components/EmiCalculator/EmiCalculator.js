@@ -9,6 +9,9 @@ import TableDetail from "../TableDetail/TableDetail";
 import SlideMarks from "../utils/SlideMarks";
 import LoanJS from "loanjs";
 import Axios from "axios";
+import toast, { Toaster } from 'react-hot-toast';
+
+
 
 const PrettySlider = withStyles({
   root: { color: "#5B2A86", height: 10 },
@@ -64,10 +67,10 @@ const EmiCalculator = () => {
       amortDataJSON: arrayNew,
     })
       .then(() => {
-        console.log("inserted successsfully");
+       toast.success("inserted successsfully");
       })
       .catch((err) => {
-        console.log(err);
+        toast.error('Error inserting data');
       });
   };
 
@@ -94,6 +97,8 @@ const EmiCalculator = () => {
 
   return (
     <Fragment>
+      <Toaster 
+      />
       <div className="EMI_calc_container">
         {/* slider container */}
         <div className="slider_container">
